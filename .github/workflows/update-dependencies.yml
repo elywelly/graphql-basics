@@ -55,10 +55,17 @@ jobs:
           fi
       - name: 'Install dependencies'
         run: |
+<<<<<<< HEAD
           cd client && npm i && cd ..
           cd server && npm i && cd ..
           cd final/client && npm i && cd ../..
           cd final/server && npm i && cd ../..
+=======
+          cd client && npm install && cd ..
+          cd server && npm install && cd ..
+          cd final/client && npm install && cd ../..
+          cd final/server && npm install && cd ../..
+>>>>>>> 28f3c13 (feat: add GitHub Action to automatically update dependencies)
       - name: 'Update dependencies'
         run: |
           cd client && npm update && cd ..
@@ -88,6 +95,7 @@ jobs:
           fi
       - name: 'Open pull request'
         run: |
+<<<<<<< HEAD
           git branch --remotes
           echo "*********"
 
@@ -104,6 +112,8 @@ jobs:
             return
           fi
 
+=======
+>>>>>>> 28f3c13 (feat: add GitHub Action to automatically update dependencies)
           gh pr status --json number,state
           echo "*********"
 
